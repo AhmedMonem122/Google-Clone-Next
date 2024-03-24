@@ -1,7 +1,15 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname, useSearchParams } from "next/navigation";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 
 const Pagination = () => {
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const searchTerm = searchParams.get("searchTerm");
+  const startIndex = +searchParams.get("start") || 1;
+
   return (
     <div className="flex justify-between sm:justify-start sm:gap-x-44 sm:px-0 px-10 pb-4 text-blue-700">
       {startIndex >= 10 && (

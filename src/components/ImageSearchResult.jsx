@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Pagination from "./Pagination";
+import { Suspense } from "react";
 
 const ImageSearchResult = ({ results }) => {
   return (
@@ -31,7 +32,9 @@ const ImageSearchResult = ({ results }) => {
       </div>
 
       <div className=" ml-16">
-        <Pagination />
+        <Suspense>
+          <Pagination />
+        </Suspense>
       </div>
     </div>
   );

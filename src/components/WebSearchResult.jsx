@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Pagination from "./Pagination";
 import Parser from "html-react-parser";
+import { Suspense } from "react";
 
 const WebSearchResult = ({ results }) => {
   return (
@@ -33,7 +34,9 @@ const WebSearchResult = ({ results }) => {
         </div>
       ))}
 
-      <Pagination />
+      <Suspense>
+        <Pagination />
+      </Suspense>
     </div>
   );
 };

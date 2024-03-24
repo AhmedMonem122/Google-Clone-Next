@@ -5,6 +5,7 @@ import { RiSettings3Line } from "react-icons/ri";
 import { TbGridDots } from "react-icons/tb";
 import BoxSearch from "./BoxSearch";
 import HeaderSearchOptions from "./HeaderSearchOptions";
+import { Suspense } from "react";
 
 const HeaderSearch = () => {
   return (
@@ -15,7 +16,9 @@ const HeaderSearch = () => {
         </Link>
 
         <div className=" flex-1">
-          <BoxSearch />
+          <Suspense>
+            <BoxSearch />
+          </Suspense>
         </div>
 
         <div className="hidden md:flex gap-x-2 ">
@@ -28,7 +31,9 @@ const HeaderSearch = () => {
         </button>
       </div>
 
-      <HeaderSearchOptions />
+      <Suspense>
+        <HeaderSearchOptions />
+      </Suspense>
     </header>
   );
 };
